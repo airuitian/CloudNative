@@ -16,6 +16,8 @@ func TestImplicit(t *testing.T) {
 func TestPoint(t *testing.T) {
 	a := 1
 	aPtr := &a
+	//aPtr = aPtr+1
+	//i := int(aPtr)
 	t.Log(a, aPtr)
 	t.Logf("%T %T", a, aPtr)
 }
