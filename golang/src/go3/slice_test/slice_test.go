@@ -1,6 +1,9 @@
 package slice_test
 
-import "testing"
+import (
+	"testing"
+	"unsafe"
+)
 
 func TestSliceInit(t *testing.T) {
 	var s0 []int
@@ -56,6 +59,8 @@ func TestSliceOfString(t *testing.T) {
 	t.Log(s)
 
 	c := []rune(s)
+	t.Log(&s)
+	t.Log(unsafe.Pointer(&c))
 	t.Log(len(c))
 	t.Logf("%x %c", c[0], c[0])
 	t.Logf("%x %s", s, s)
