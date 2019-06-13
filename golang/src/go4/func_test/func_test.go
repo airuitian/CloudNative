@@ -11,7 +11,9 @@ func returnMultiValues() (int, int) {
 	return rand.Intn(10), rand.Intn(10)
 }
 
-func timeSpent(inner func(op int) int) func(op int) int {
+type IntConv func(op int) int
+
+func timeSpent(inner IntConv) IntConv {
 	return func(n int) int {
 		start := time.Now()
 		ret := inner(n)
