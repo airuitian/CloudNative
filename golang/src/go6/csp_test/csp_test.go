@@ -24,10 +24,12 @@ func TestService(t *testing.T) {
 
 func AsyncService() chan string {
 	retCh := make(chan string)
+	//retCh := make(chan string,1)
 	go func() {
 		ret := service()
 		fmt.Println("returned result.")
 		retCh <- ret
+		fmt.Println("service exited.")
 	}()
 
 	return retCh
