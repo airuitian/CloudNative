@@ -24,6 +24,7 @@ type rot13Reader struct {
 }
 
 func (r rot13Reader) Read(p []byte) (n int, err error) {
+	//read from r(string) to p([]byte)
 	n, err = r.r.Read(p)
 	for i := 0; i < n; i++ {
 		p[i] = rot13(p[i])
