@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hello
+spec:
+  restartPolicy: Never
+  containers:
+  - name: hello
+    image: "jocatalin/kubernetes-bootcamp:v1"
+    ports:
+    - containerPort: 8080
