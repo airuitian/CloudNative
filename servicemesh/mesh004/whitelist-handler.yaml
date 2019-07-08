@@ -1,0 +1,8 @@
+apiVersion: config.istio.io/v1alpha2
+kind: listchecker
+metadata:
+  name: whitelist
+spec:
+  # providerUrl: 通常会在外部管理列表内容，然后使用这一参数进行异步的抓取
+  overrides: ["v1", "v2"]  # 用 overrides 字段提供静态内容
+  blacklist: false
