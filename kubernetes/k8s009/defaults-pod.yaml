@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: default-demo
+spec:
+  containers:
+  - name: default-demo-ctr
+    image: nginx
