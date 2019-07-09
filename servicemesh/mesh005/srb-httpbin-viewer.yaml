@@ -1,0 +1,12 @@
+apiVersion: "rbac.istio.io/v1alpha1"
+kind: ServiceRoleBinding
+metadata:
+  name: bind-httpbin-viewer
+  namespace: rbac-groups-test-ns
+spec:
+  subjects:
+  - properties:
+      request.auth.claims[groups]: "group1"
+  roleRef:
+    kind: ServiceRole
+    name: "httpbin-viewer"
